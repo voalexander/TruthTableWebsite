@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <script lang="javascript" src="xlsx.full.min.js"></script>
+        <script lang="javascript" src="FileSaver.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div>
+            <div>
+                <Strong>Usage</Strong>
+                <br> Enter Variables separated by commas and no spaces
+                <br> Enter expression or multiple expressions separated by commands and no spaces
+                <br>
+                <table>
+                    <tr>
+                        <td>AND</td>
+                        <td>{expression} && {expression}</td>
+                    </tr>
+                    <tr>
+                        <td>OR</td>
+                        <td>{expression} || {expression}</td>
+                    </tr>
+                    <tr>
+                        <td>NOT</td>
+                        <td>!{expression}</td>
+                    </tr>
+                    <tr>
+                        <td>NAND</td>
+                        <td>{expression} (&) {expression}</td>
+                    </tr>
+                    <tr>
+                        <td>NOR</td>
+                        <td>{expression} (|) {expression}</td>
+                    </tr>
+                    <tr>
+                        <td>XOR</td>
+                        <td>{expression} (+) {expression}</td>
+                    </tr>
+                </table>
+                <br><b>Note NAND, NOR, XOR is not currently supported</b>
+                <br><br>
+            </div>
+            <div class="rows">
+                <label><b>Variables (comma separated no spaces)</b></label>
+                <input type="text" id="vars" value="a,b,c">
+            </div>
+            <div class="rows">
+                <label><b>Expressions (comma separated)</b></label>
+                <input type="text" id="expression" value="(a || b) && (c)">
+            </div>
+            <div class="rows">
+                <button id="getResult">Generate truth table</button>
+            </div>
+            <div id="result"></div>
+            <div class="rows">
+                <button id="exportXLS">Export as XLS (Excel) file</button>
+            </div>
+            <div>
+                <p>
+                <Strong>Changelog:</Strong>
+                <br>11/6/20 Repo setup
+                <br>11/7/20 Pages initial setup
+                <br>11/9/20 Input fields and buttons added
+                <br>11/10/20 Input parsing completed
+                <br>11/13/20 Truth table generation and display created
+                <br>11/14/20 Added output to Excel file
+                <br><br><Strong>TO DO</Strong>
+                <br>Improve CSS design
+                <br>Add support for NAND, NOR, XOR
+                <br>Fix issues with more than 3 variables
+                </p>
+            </div>
+        </div>
+        <script src='scripts.js'></script>
+    </body>
+</html>
